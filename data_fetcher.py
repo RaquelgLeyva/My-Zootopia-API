@@ -1,7 +1,11 @@
 import requests
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Reemplaza con tu propia clave API
-API_KEY = 'C3CBx7//p4vPx+kqw1cy3g==Y4BTVgst6mrO6j1B'
+API_KEY = os.getenv('API_KEY')
 
 
 def fetch_data(animal_name):
@@ -26,3 +30,5 @@ def fetch_data(animal_name):
         # Captura cualquier error durante la solicitud
         print(f"Request failed: {e}")
         return None
+
+
